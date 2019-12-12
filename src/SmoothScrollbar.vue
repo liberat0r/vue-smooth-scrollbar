@@ -42,7 +42,8 @@
 
       this.scrollbar = scrollbar
     },
-    destroyed() {
+    beforeDestroy() {
+      if (scrollbar === null) return;
       scrollbar.destroy()
       scrollbar = null
       this.scrollbar = null
